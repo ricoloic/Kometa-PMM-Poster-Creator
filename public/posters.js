@@ -252,7 +252,8 @@ const ANIME = {
                 "Popular",
                 "chart"
             ],
-            "url": "assets/Anime/Chart/Popular.png"
+            "url": "assets/Anime/Chart/Popular.png",
+            "overlay": true
         },
         {
             "type": "chart",
@@ -261,7 +262,8 @@ const ANIME = {
                 "Top Rated",
                 "chart"
             ],
-            "url": "assets/Anime/Chart/Top Rated.png"
+            "url": "assets/Anime/Chart/Top Rated.png",
+            "overlay": true
         },
         {
             "type": "chart",
@@ -270,7 +272,8 @@ const ANIME = {
                 "Trending",
                 "chart"
             ],
-            "url": "assets/Anime/Chart/Trending.png"
+            "url": "assets/Anime/Chart/Trending.png",
+            "overlay": true
         }
     ],
     GENRE: [
@@ -281,7 +284,8 @@ const ANIME = {
                 "Action",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Action.png"
+            "url": "assets/Anime/Genre/Action.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -290,7 +294,8 @@ const ANIME = {
                 "Adventure",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Adventure.png"
+            "url": "assets/Anime/Genre/Adventure.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -299,7 +304,8 @@ const ANIME = {
                 "Boys Love",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Boys Love.png"
+            "url": "assets/Anime/Genre/Boys Love.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -308,7 +314,8 @@ const ANIME = {
                 "Cars",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Cars.png"
+            "url": "assets/Anime/Genre/Cars.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -317,7 +324,8 @@ const ANIME = {
                 "Comedy",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Comedy.png"
+            "url": "assets/Anime/Genre/Comedy.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -326,7 +334,8 @@ const ANIME = {
                 "Demons",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Demons.png"
+            "url": "assets/Anime/Genre/Demons.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -335,7 +344,8 @@ const ANIME = {
                 "Drama",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Drama.png"
+            "url": "assets/Anime/Genre/Drama.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -344,7 +354,8 @@ const ANIME = {
                 "Ecchi",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Ecchi.png"
+            "url": "assets/Anime/Genre/Ecchi.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -353,7 +364,8 @@ const ANIME = {
                 "Erotica",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Erotica.png"
+            "url": "assets/Anime/Genre/Erotica.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -362,7 +374,8 @@ const ANIME = {
                 "Fantasy",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Fantasy.png"
+            "url": "assets/Anime/Genre/Fantasy.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -371,7 +384,8 @@ const ANIME = {
                 "Game",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Game.png"
+            "url": "assets/Anime/Genre/Game.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -380,7 +394,8 @@ const ANIME = {
                 "Girls Love",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Girls Love.png"
+            "url": "assets/Anime/Genre/Girls Love.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -389,7 +404,8 @@ const ANIME = {
                 "Gourmet",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Gourmet.png"
+            "url": "assets/Anime/Genre/Gourmet.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -398,7 +414,8 @@ const ANIME = {
                 "Harem",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Harem.png"
+            "url": "assets/Anime/Genre/Harem.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -407,7 +424,8 @@ const ANIME = {
                 "Hentai",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Hentai.png"
+            "url": "assets/Anime/Genre/Hentai.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -416,7 +434,8 @@ const ANIME = {
                 "Historical",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Historical.png"
+            "url": "assets/Anime/Genre/Historical.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -425,7 +444,8 @@ const ANIME = {
                 "Horror",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Horror.png"
+            "url": "assets/Anime/Genre/Horror.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -434,7 +454,8 @@ const ANIME = {
                 "Isekai",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Isekai.png"
+            "url": "assets/Anime/Genre/Isekai.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -443,7 +464,8 @@ const ANIME = {
                 "Martial Arts",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Martial Arts.png"
+            "url": "assets/Anime/Genre/Martial Arts.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -452,7 +474,8 @@ const ANIME = {
                 "Mecha",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Mecha.png"
+            "url": "assets/Anime/Genre/Mecha.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -461,7 +484,8 @@ const ANIME = {
                 "Military",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Military.png"
+            "url": "assets/Anime/Genre/Military.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -470,7 +494,8 @@ const ANIME = {
                 "Music",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Music.png"
+            "url": "assets/Anime/Genre/Music.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -479,7 +504,8 @@ const ANIME = {
                 "Mystery",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Mystery.png"
+            "url": "assets/Anime/Genre/Mystery.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -488,7 +514,8 @@ const ANIME = {
                 "Parody",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Parody.png"
+            "url": "assets/Anime/Genre/Parody.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -497,7 +524,8 @@ const ANIME = {
                 "Police",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Police.png"
+            "url": "assets/Anime/Genre/Police.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -506,7 +534,8 @@ const ANIME = {
                 "Psychological",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Psychological.png"
+            "url": "assets/Anime/Genre/Psychological.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -515,7 +544,8 @@ const ANIME = {
                 "Romance",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Romance.png"
+            "url": "assets/Anime/Genre/Romance.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -524,7 +554,8 @@ const ANIME = {
                 "Samurai",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Samurai.png"
+            "url": "assets/Anime/Genre/Samurai.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -533,7 +564,8 @@ const ANIME = {
                 "School",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/School.png"
+            "url": "assets/Anime/Genre/School.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -542,7 +574,8 @@ const ANIME = {
                 "Sci-Fi",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Sci-Fi.png"
+            "url": "assets/Anime/Genre/Sci-Fi.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -551,7 +584,8 @@ const ANIME = {
                 "Shoujo",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Shoujo.png"
+            "url": "assets/Anime/Genre/Shoujo.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -560,7 +594,8 @@ const ANIME = {
                 "Shounen",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Shounen.png"
+            "url": "assets/Anime/Genre/Shounen.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -569,7 +604,8 @@ const ANIME = {
                 "Slice of Life",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Slice of Life.png"
+            "url": "assets/Anime/Genre/Slice of Life.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -578,7 +614,8 @@ const ANIME = {
                 "Space",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Space.png"
+            "url": "assets/Anime/Genre/Space.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -587,7 +624,8 @@ const ANIME = {
                 "Sports",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Sports.png"
+            "url": "assets/Anime/Genre/Sports.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -596,7 +634,8 @@ const ANIME = {
                 "Super Power",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Super Power.png"
+            "url": "assets/Anime/Genre/Super Power.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -605,7 +644,8 @@ const ANIME = {
                 "Supernatural",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Supernatural.png"
+            "url": "assets/Anime/Genre/Supernatural.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -614,7 +654,8 @@ const ANIME = {
                 "Suspense",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Suspense.png"
+            "url": "assets/Anime/Genre/Suspense.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -623,7 +664,8 @@ const ANIME = {
                 "Thriller",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Thriller.png"
+            "url": "assets/Anime/Genre/Thriller.png",
+            "overlay": true
         },
         {
             "type": "genre",
@@ -632,7 +674,8 @@ const ANIME = {
                 "Vampire",
                 "genre"
             ],
-            "url": "assets/Anime/Genre/Vampire.png"
+            "url": "assets/Anime/Genre/Vampire.png",
+            "overlay": true
         }
     ],
     SEASON: [
@@ -1377,6 +1420,14 @@ const SHOW = {
 
 const SHARED = {
     AUDIO: [
+        {
+            "type": "audio",
+            "name": "other",
+            "lines": [
+                "Other",
+                "audio"
+            ]
+        },
         {
             "type": "audio",
             "name": "ab",
@@ -2806,14 +2857,22 @@ const SHARED = {
     ]
 }
 
-const POSTERS = [
-    // ...MOVIE.BEST_OF_DECADE,
-    // ...MOVIE.GENRE,
-    // ...ANIME.CHART,
-    // ...ANIME.GENRE,
-    // ...ANIME.SEASON,
-    // ...SHOW.GENRE,
-    // ...SHOW.CHART,
-    // ...SHARED.AUDIO,
-    // ...SHARED.RESOLUTION,
-]
+const POSTERS = {
+    'Movie': {
+        'Best Of Decade': MOVIE.BEST_OF_DECADE,
+        'Genre': MOVIE.GENRE
+    },
+    'Anime': {
+        'Chart': ANIME.CHART,
+        'Genre': ANIME.GENRE,
+        'Season': ANIME.SEASON
+    },
+    'Show': {
+        'Chart': SHOW.CHART,
+       'Genre': SHOW.GENRE
+    },
+    'Shared': {
+        'Audio': SHARED.AUDIO,
+        'Resolution': SHARED.RESOLUTION
+    }
+};

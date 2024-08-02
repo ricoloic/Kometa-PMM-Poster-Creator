@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
-    <script src="https://unpkg.com/p5.fillgradient"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
 
-  </head>
-  <body>
-    <main>
-    </main>
-    <script src="posters.js"></script>
-    <script src="sketch.js"></script>
-  </body>
+<head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+  <script src="https://unpkg.com/p5.fillgradient"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <main class="mx-auto p-6">
+    <div id="collection-list" class="flex w-full overflow-x-auto gap-4 pb-4 mb-4 overflow-x-auto">
+    </div>
+
+    <div class="flex gap-5">
+      <canvas class="border-solid border-2 sticky top-5" width="600" height="900" id="poster-canvas"></canvas>
+
+      <div id="tab" class="flex-1">
+        <div role="tablist" aria-orientation="horizontal"
+          class="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground bg-gray-100"
+          tabindex="0" data-orientation="horizontal" style="outline: none;">
+          <button id="tab-items" type="button" role="tab" data-state="active" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:shadow">
+            Items
+          </button>
+          <button id="tab-options" type="button" role="tab" data-state="inactive" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:shadow">
+            Options
+          </button>
+        </div>
+
+        <div id="items" data-state="active" class="data-[state=inactive]:hidden w-full">
+          <div id="items-list" class="grid gap-6 my-3 w-full">
+          </div>
+        </div>
+
+        <div id="options" data-state="inactive" class="flex flex-col gap-6 data-[state=inactive]:hidden w-full my-3">
+          <label htmlFor="wait-time" class="block">
+            <span class="ml-1 text-gray-400">Wait Time</span>
+            <input id="wait-time" type="number" value="250" class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+          </label>
+
+          <button id="generate" type="button" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-black w-full hover:bg-gray-100 border-gray-200 border-2">
+            Generate
+          </button>
+
+          <button id="download" type="button" class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-black w-full hover:bg-gray-100 border-gray-200 border-2">
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="posters.js"></script>
+  <script src="poster-builder.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
 </html>

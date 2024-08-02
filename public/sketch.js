@@ -1,10 +1,10 @@
-let font;
-let index = 0;
-let zip;
-let cvn;
-const ENABLE_SAVING = true;
-const WAIT_TIME = 250;
-const COLORS = [
+var font;
+var index = 0;
+var zip;
+var cvn;
+var ENABLE_SAVING = false;
+var waitTime = 250;
+var COLORS = [
     "#FF5733",
     "#3357FF",
     "#FF33A1",
@@ -28,6 +28,7 @@ const COLORS = [
     "#33FFA1",
     "#FFA133"
 ]
+var posters = [];
 
 function preload() {
     font = loadFont('/FFGoodProCond-Medium.ttf');
@@ -35,18 +36,20 @@ function preload() {
 
 function setup() {
     zip = new JSZip();
-    cvn = createCanvas(600, 900);
-    createPoster();
+    cvn = createCanvas(600, 900, document.getElementById('poster-canvas'));
+    ElementBuiler.collectionList();
+    ElementBuiler.tabSelector();
+    ElementBuiler.generate();
+    ElementBuiler.download();
+    ElementBuiler.waitTime();
 }
 
-async function createPoster() {
-    const poster = POSTERS[index];
-    console.log(poster);
+async function createPoster(download = false, filename = "images") {
+    const poster = posters[index];
 
     const builder = PosterBuilder.init(poster.type ?? 'default');
     if (poster.url) {
         await builder.url(poster.url);
-        builder.overlay(false);
     } else if (poster.color) {
         builder.color(poster.color);
         builder.overlay(true);
@@ -54,100 +57,102 @@ async function createPoster() {
         builder.color(COLORS[Math.floor(Math.random() * COLORS.length)]);
         builder.overlay(true);
     }
+    if (poster.overlay) {
+        builder.overlay(false);
+    }
     if (poster.lines) builder.text(poster.lines);
     builder.side();
 
-    if (ENABLE_SAVING) {
+    if (download) {
         const dataURL = cvn.elt.toDataURL('image/png');
         const base64Data = dataURL.split(',')[1];
         zip.file(`${poster.name}.png`, base64Data, { base64: true });
     }
 
     index++;
-    if (index < POSTERS.length) {
-        await new Promise((resolve) => setTimeout(() => resolve(), WAIT_TIME));
-        createPoster();
-    } else if (ENABLE_SAVING) {
+    if (index < posters.length) {
+        await new Promise((resolve) => setTimeout(() => resolve(), waitTime));
+        createPoster(download, filename);
+    } else if (download) {
         const content = await zip.generateAsync({ type: 'blob' })
         const link = document.createElement('a');
         link.href = URL.createObjectURL(content);
-        link.download = 'images.zip';
+        link.download = `${filename}.zip`;
         link.click();
     }
 }
 
-class PosterBuilder {
-    constructor(type) {
-        this.type = type;
-    }
+class ElementBuiler {
+    static collectionList() {
+        const container = document.getElementById('collection-list');
+        for (const [library, collections] of Object.entries(POSTERS)) {
+            for (const [collection, data] of Object.entries(collections)) {
+                const node = document.createElement("button");
+                node.className = "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-white hover:bg-gray-100 hover:text-black h-10 shrink-0 px-6 py-2 rounded-full data-[state=active]:bg-black data-[state=active]:text-white";
+                node.textContent = `${library} ${collection}`;
+                node.setAttribute('data-state', 'inactive');
+                node.onclick = () => {
+                    index = 0;
+                    posters = data;
+                    document
+                        .querySelector('#collection-list button[data-state="active"]')
+                        ?.setAttribute('data-state', 'inactive');
+                    node.setAttribute('data-state', 'active');
 
-    static init(type = "default") {
-        return new PosterBuilder(type);
-    }
-
-    async url(imagepath) {
-        push();
-        noStroke();
-        translate(width / 2, height / 2);
-        imageMode(CENTER);
-        const img =
-            await new Promise((resolve) => loadImage(imagepath, (img) => resolve(img), console.error));
-        image(img, 0, 0);
-        pop();
-        return this;
-    }
-
-    color(colorargs) {
-        noStroke();
-        if (typeof colorargs === 'string' || typeof colorargs === 'number')
-            fill(color(colorargs));
-        else
-            fill(color(...colorargs));
-        rect(0, 0, width, height);
-        return this;
-    }
-
-    overlay(gradient = false) {
-        if (gradient) {
-            fillGradient('radial', {
-                from: [width / 2, height / 2, 0], // x, y, radius
-                to: [width / 2, height / 2, 900], // x, y, radius
-                steps: [color(0, 50), color(0, 125), color(0, 255)]
-            });
-        } else {
-            fill(0, 50);
+                    const list = document.querySelector('#items-list');
+                    list.innerHTML = data.map((elem) => `
+                    <div class="grid gap-1 border-gray-200 border-2 border-solid rounded-md px-4 py-2 w-full hover:bg-gray-100">
+                        <h3 class="font-medium">${elem.lines[0]}</h3>
+                        <p class="text-sm text-muted-foreground">${elem.type}</p>
+                    </div>
+                    `).join("");
+                };
+                container.appendChild(node);
+            }
         }
-        noStroke();
-        rect(0, 0, width, height);
-        return this;
+
     }
 
-    side() {
-        stroke(255);
-        strokeWeight(25);
-        line(0, 0, width, 0);
-        line(width, 0, width, height);
-        line(width, height, 0, height);
-        line(0, height, 0, 0);
-        return this;
+    static tabSelector() {
+        const tabItems = document.querySelector('#tab-items');
+        const items = document.querySelector('#items');
+        const tabOptions = document.querySelector('#tab-options');
+        const options = document.querySelector('#options');
+        tabItems.onclick = () => {
+            options.setAttribute('data-state', 'inactive');
+            tabOptions.setAttribute('data-state', 'inactive');
+            items.setAttribute('data-state', 'active');
+            tabItems.setAttribute('data-state', 'active');
+        };
+        tabOptions.onclick = () => {
+            items.setAttribute('data-state', 'inactive');
+            tabItems.setAttribute('data-state', 'inactive');
+            options.setAttribute('data-state', 'active');
+            tabOptions.setAttribute('data-state', 'active');
+        };
     }
 
-    text(lines) {
-        noStroke();
-        fill(255);
-        textAlign(CENTER);
-        textFont(font);
-        push();
-        translate(width / 2, height / 2);
-        if (lines.length === 2) {
-            textSize(72);
-            text(lines[0].toUpperCase(), 0, 72 / 2);
-            textSize(40);
-            text(lines[1].toUpperCase(), 0, -72 / 2);
-        } else if (lines.length === 1) {
-            textSize(72);
-            text(lines[0].toUpperCase(), 0, 72 / 3);
-        }
-        pop();
+    static generate() {
+        const button = document.querySelector('#generate');
+        button.onclick = () => {
+            index = 0;
+            createPoster(false);
+        };
+    }
+
+    static download() {
+        const button = document.querySelector('#download');
+        button.onclick = () => {
+            index = 0;
+            createPoster(true, document.querySelector('#collection-list button[data-state="active"]')?.textContent ?? 'images');
+        };
+    }
+
+    static waitTime() {
+        const input = document.querySelector('#wait-time');
+        input.onchange = (event) => {
+            waitTime = parseInt(event.target.value, 10) || 0;
+            console.log(waitTime);
+        };
     }
 }

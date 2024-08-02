@@ -7,3 +7,14 @@ body {
 canvas {
   display: block;
 }
+
+*::-webkit-scrollbar{
+  height: 8px;
+  width: 8px;
+  background: gray;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb:horizontal{
+  background: #000;
+  border-radius: 10px;
+}
